@@ -404,6 +404,58 @@ h3 {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Form Styles */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px auto 24px auto;
+    width: 100%;
+    max-width: 360px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus {
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.25);
+}
+
+.signup-form .btn {
+    width: 100%;
+    max-width: none;
+    margin-top: 8px;
+}
+
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -604,6 +656,55 @@ footer {
     border-radius: 8px;
     background: var(--white);
     border: 2px dashed var(--border-color);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Success Message Override */
+.success-message {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: successFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes successFadeIn {
+    0% {
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+[data-theme="dark"] .success-message {
+    background: rgba(10, 10, 10, 0.6);
+}
+
+.success-message h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.success-message p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 [data-theme="dark"] .step-viz {

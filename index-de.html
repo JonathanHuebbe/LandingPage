@@ -157,8 +157,13 @@
                 <div class="price">89<span class="currency">€*</span></div>
                 <p class="one-time">*Ziel-Einmalpreis. Endgültiger Preis kann sich ändern.<br>Festplatte nicht
                     enthalten.</p>
-                <button class="btn btn-primary btn-large">Weg begleiten</button>
-                <p class="guarantee">Kostenlos eintragen. Du erhältst unregelmäßige Updates zum Prototypen und
+                <form action="https://api.web3forms.com/submit" method="POST" class="signup-form">
+                    <input type="hidden" name="access_key" value="a8bb8c45-a683-4c20-afef-8d7f49435db7">
+                    <input type="text" name="name" placeholder="Dein Name" required class="form-input">
+                    <input type="email" name="email" placeholder="Deine E-Mail" required class="form-input">
+                    <button type="submit" class="btn btn-primary btn-large">Weg begleiten</button>
+                </form>                
+                <p class="guarantee">Kostenlos eintragen. Du erhältst unregelmäßige updates zum Prototypen und
                     exklusiven Early-Access, sobald wir soweit sind.</p>
             </div>
         </div>
@@ -187,6 +192,42 @@
             html.dataset.theme = newTheme;
             localStorage.setItem('theme', newTheme);
         });
+
+        // Formular-Verarbeitung
+        const form = document.querySelector('.signup-form');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Bitte warten...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'not-allowed';
+                submitBtn.disabled = true;
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(form)
+                }).then(async (response) => {
+                    if (response.status == 200) {
+                        form.innerHTML = '<div class="success-message"><i data-lucide="check-circle" style="color: #10B981; margin-bottom: 12px; width: 48px; height: 48px;"></i><h3>Vielen Dank!</h3><p>Du stehst auf der Liste. Wir halten dich auf dem Laufenden.</p></div>';
+                        lucide.createIcons();
+                    } else {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.style.cursor = 'pointer';
+                        submitBtn.disabled = false;
+                        alert('Ein Fehler ist aufgetreten. Bitte versuche es erneut.');
+                    }
+                }).catch(error => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.cursor = 'pointer';
+                    submitBtn.disabled = false;
+                    alert('Ein Fehler ist aufgetreten. Bitte überprüfe deine Verbindung.');
+                });
+            });
+        }
     </script>
 </body>
 
