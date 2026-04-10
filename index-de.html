@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterStorage | Dummer Speicher. Geniale KI.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Theme preference 
+        const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = initialTheme;
+    </script>
+</head>
+
+<body>
+    <div class="dev-banner">
+        <span>🚧 Wir bauen den BetterStorage gerade auf! Alle gezeigten Features und Specs sind unser aktueller
+            Prototyp-Stand und können sich bis zum Launch noch verbessern.</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i data-lucide="server"></i>
+                <span>BetterStorage</span>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <a href="index.html">EN</a>
+                    <span>/</span>
+                    <a href="index-de.html" class="active">DE</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Dark Mode umschalten">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="#buy" class="btn btn-outline">Weg begleiten</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="badge-group">
+                    <div class="badge dev-badge">🚧 In Entwicklung / Alpha</div>
+                    <div class="badge">Kein Abo. Keine Cloud.</div>
+                </div>
+                <h1>Dummer Speicher.<br><span class="highlight">Geniale KI.</span></h1>
+                <p>Der ultra-günstige Mini-Server für dein Zuhause. Lade all deine Dateien völlig unsortiert hoch – den
+                    Rest erledigt die KI auf deinem Smartphone oder Laptop.</p>
+                <div class="hero-buttons">
+                    <a href="#buy" class="btn btn-primary">Weg begleiten</a>
+                    <a href="#how-it-works" class="btn btn-text">Wie funktioniert das? &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i data-lucide="upload-cloud" class="card-icon"></i>
+                    <p>1.204 unsortierte Dateien hochgeladen</p>
+                </div>
+                <div class="floating-card card-right">
+                    <i data-lucide="sparkles" class="card-icon highlight-icon"></i>
+                    <p>KI hat 12 virtuelle Ordner erstellt</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Schluss mit dem Ordner-Chaos</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Einfach alles reinwerfen</h3>
+                    <p>Lade Bilder, Rechnungen und Dokumente auf den Server hoch. Ohne Nachdenken. Ohne manuelles
+                        Sortieren.</p>
+                    <div class="step-viz">
+                        <div class="viz-server-box">
+                            <i data-lucide="server"></i>
+                        </div>
+                        <div class="viz-file viz-file-1"><i data-lucide="image"></i></div>
+                        <div class="viz-file viz-file-2"><i data-lucide="file-text"></i></div>
+                        <div class="viz-file viz-file-3"><i data-lucide="folder"></i></div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Dein Handy denkt mit</h3>
+                    <p>Sobald du die App öffnest, scannt die KI <b>deines</b> Smartphones neue Dateien und vergibt
+                        unsichtbare Tags (z.B. "Rechnung", "Urlaub").</p>
+                    <div class="step-viz step-viz-2">
+                        <div class="viz-phone">
+                            <i data-lucide="smartphone"></i>
+                            <div class="viz-scan-line"></div>
+                        </div>
+                        <div class="viz-tag viz-tag-1">Rechnung</div>
+                        <div class="viz-tag viz-tag-2">Urlaub</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Bessere Ordner</h3>
+                    <p>Erstelle einen neuen Ordner mit einem bestimmten Namen. Er zeigt dir sofort alle relevanten
+                        Dateien, ohne
+                        dass sie jemals dorthin verschoben wurden.</p>
+                    <div class="step-viz step-viz-3">
+                        <div class="viz-folder">
+                            <i data-lucide="folder-open"></i>
+                            <div class="viz-folder-label">Urlaub</div>
+                        </div>
+                        <div class="viz-linked-file viz-linked-1"><i data-lucide="image"></i></div>
+                        <div class="viz-linked-file viz-linked-2"><i data-lucide="image"></i></div>
+                        <div class="viz-linked-file viz-linked-3"><i data-lucide="video"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon-box"><i data-lucide="cpu"></i></div>
+                    <div>
+                        <h3>Warum für teure Hardware bezahlen?</h3>
+                        <p>Standard-Server haben teure Prozessoren. Die lassen wir weg. Dein Laptop oder iPhone hat
+                            bereits den besten KI-Chip. Wir nutzen einfach den!</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                    <div>
+                        <h3>100% Privat & Lokal</h3>
+                        <p>Keine Cloud. Deine Daten verlassen niemals dein Heimnetzwerk. Die KI läuft rein lokal auf
+                            deinen eigenen Geräten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="buy" class="cta-section">
+        <div class="container">
+            <div class="pricing-card">
+                <div class="badge dev-badge" style="margin-bottom: 20px;">Aktuell In Entwicklung</div>
+                <h2>Der Server, der die Arbeit für dich erledigt.</h2>
+                <p class="specs">Nur WLAN/Ethernet + USB für Backups. Keine teuren Extras.</p>
+                <div class="price">89<span class="currency">€*</span></div>
+                <p class="one-time">*Ziel-Einmalpreis. Endgültiger Preis kann sich ändern.<br>Festplatte nicht
+                    enthalten.</p>
+                <button class="btn btn-primary btn-large">Weg begleiten</button>
+                <p class="guarantee">Kostenlos eintragen. Du erhältst unregelmäßige Updates zum Prototypen und
+                    exklusiven Early-Access, sobald wir soweit sind.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="logo">
+                <i data-lucide="server"></i>
+                <span>BetterStorage</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterStorage | Dumb Storage. Brilliant AI.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Check for saved theme preference or system preference EARLY to avoid flash
+        const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = initialTheme;
+    </script>
+</head>
+
+<body>
+    <div class="dev-banner">
+        <span>🚧 We are currently building BetterStorage! All shown features and specs represent our current prototype
+            and may improve before launch.</span>
+    </div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i data-lucide="server"></i>
+                <span>BetterStorage</span>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <a href="index.html" class="active">EN</a>
+                    <span>/</span>
+                    <a href="index-de.html">DE</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="#buy" class="btn btn-outline">Follow the Journey</a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="badge-group">
+                    <div class="badge dev-badge">🚧 In Development / Alpha</div>
+                    <div class="badge">No Subscription. No Cloud.</div>
+                </div>
+                <h1>Dumb Storage.<br><span class="highlight">Brilliant AI.</span></h1>
+                <p>The ultra-affordable mini-server for your home. Upload all your files completely unsorted – your
+                    smartphone or laptop's AI handles the rest.</p>
+                <div class="hero-buttons">
+                    <a href="#buy" class="btn btn-primary">Follow the Journey</a>
+                    <a href="#how-it-works" class="btn btn-text">How does it work? &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i data-lucide="upload-cloud" class="card-icon"></i>
+                    <p>1,204 unsorted files uploaded</p>
+                </div>
+                <div class="floating-card card-right">
+                    <i data-lucide="sparkles" class="card-icon highlight-icon"></i>
+                    <p>AI created 12 virtual folders</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">End the Folder Chaos</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Just throw it all in</h3>
+                    <p>Upload photos, invoices, and documents to the server. No overthinking. No manual sorting.</p>
+                    <div class="step-viz">
+                        <div class="viz-server-box">
+                            <i data-lucide="server"></i>
+                        </div>
+                        <div class="viz-file viz-file-1"><i data-lucide="image"></i></div>
+                        <div class="viz-file viz-file-2"><i data-lucide="file-text"></i></div>
+                        <div class="viz-file viz-file-3"><i data-lucide="folder"></i></div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Your phone does the thinking</h3>
+                    <p>As soon as you open the app, <b>your</b> smartphone's AI scans new files and assigns invisible
+                        tags (e.g., "Invoice", "Vacation").</p>
+                    <div class="step-viz step-viz-2">
+                        <div class="viz-phone">
+                            <i data-lucide="smartphone"></i>
+                            <div class="viz-scan-line"></div>
+                        </div>
+                        <div class="viz-tag viz-tag-1">Invoice</div>
+                        <div class="viz-tag viz-tag-2">Vacation</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Better Folders</h3>
+                    <p>Create a new folder with a name. It instantly shows all relevant files without them ever
+                        being moved there.</p>
+                    <div class="step-viz step-viz-3">
+                        <div class="viz-folder">
+                            <i data-lucide="folder-open"></i>
+                            <div class="viz-folder-label">Vacation</div>
+                        </div>
+                        <div class="viz-linked-file viz-linked-1"><i data-lucide="image"></i></div>
+                        <div class="viz-linked-file viz-linked-2"><i data-lucide="image"></i></div>
+                        <div class="viz-linked-file viz-linked-3"><i data-lucide="video"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon-box"><i data-lucide="cpu"></i></div>
+                    <div>
+                        <h3>Why pay for expensive hardware?</h3>
+                        <p>Standard servers have pricey processors. BetterStorage leaves them out. Your laptop or iPhone
+                            already
+                            has the world's best AI chip. We just use that!</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                    <div>
+                        <h3>100% Private & Local</h3>
+                        <p>No cloud. Your data never leaves your home network. The AI runs purely locally on your own
+                            devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="buy" class="cta-section">
+        <div class="container">
+            <div class="pricing-card">
+                <div class="badge dev-badge" style="margin-bottom: 20px;">Currently In Development</div>
+                <h2>The server that does the work for you.</h2>
+                <p class="specs">Wi-Fi/Ethernet + USB for backups only. No expensive extras.</p>
+                <div class="price"><span class="currency">$</span>89<span class="currency">*</span></div>
+                <p class="one-time">*Target one-time price. Final pricing is subject to change.<br>Drive not included.
+                </p>
+                <button class="btn btn-primary btn-large">Follow the Journey</button>
+                <p class="guarantee">Sign up for free. You'll receive occasional updates on the prototype and exclusive
+                    early access as soon as we're ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="logo">
+                <i data-lucide="server"></i>
+                <span>BetterStorage</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Imprint</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">T&Cs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize icons
+        lucide.createIcons();
+
+        // Theme switching logic
+        const themeToggle = document.getElementById('theme-toggle');
+
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+
+</html>
