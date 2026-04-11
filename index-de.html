@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BetterStorage | Dummer Speicher. Geniale KI.</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/fonts/inter.css">
+    <script src="assets/js/lucide.min.js"></script>
     <script>
         // Theme preference 
         const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -157,12 +155,13 @@
                 <div class="price">89<span class="currency">€*</span></div>
                 <p class="one-time">*Ziel-Einmalpreis. Endgültiger Preis kann sich ändern.<br>Festplatte nicht
                     enthalten.</p>
-                <form action="https://api.web3forms.com/submit" method="POST" class="signup-form">
-                    <input type="hidden" name="access_key" value="a8bb8c45-a683-4c20-afef-8d7f49435db7">
-                    <input type="text" name="name" placeholder="Dein Name" required class="form-input">
-                    <input type="email" name="email" placeholder="Deine E-Mail" required class="form-input">
-                    <button type="submit" class="btn btn-primary btn-large">Weg begleiten</button>
-                </form>                
+                <form class="signup-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="c5b64311-1f68-48b8-be56-dd666caf0e62">
+                    <input type="text" name="name" class="form-input" placeholder="Dein Name" required>
+                    <input type="email" name="email" class="form-input" placeholder="Deine E-Mail Adresse" required>
+                    <button type="submit" class="btn btn-primary btn-large">Eintragen</button>
+                </form>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">Mit dem Eintragen stimmst du unserer <a href="datenschutz.html" style="color: var(--text-color);">Datenschutzerklärung</a> zu.</p>
                 <p class="guarantee">Kostenlos eintragen. Du erhältst unregelmäßige updates zum Prototypen und
                     exklusiven Early-Access, sobald wir soweit sind.</p>
             </div>
@@ -177,8 +176,8 @@
             </div>
             <div class="footer-links">
                 <a href="impressum.html">Impressum</a>
-                <a href="#">Datenschutz</a>
-                <a href="#">AGB</a>
+                <a href="datenschutz.html">Datenschutz</a>
+
             </div>
         </div>
     </footer>
@@ -195,8 +194,8 @@
 
         // Formular-Verarbeitung
         const form = document.querySelector('.signup-form');
-        if(form) {
-            form.addEventListener('submit', function(e) {
+        if (form) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn.textContent;
@@ -205,12 +204,14 @@
                 submitBtn.style.cursor = 'not-allowed';
                 submitBtn.disabled = true;
 
+                const userEmail = form.querySelector('input[name="email"]').value;
+
                 fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: new FormData(form)
                 }).then(async (response) => {
                     if (response.status == 200) {
-                        form.innerHTML = '<div class="success-message"><i data-lucide="check-circle" style="color: #10B981; margin-bottom: 12px; width: 48px; height: 48px;"></i><h3>Vielen Dank!</h3><p>Du stehst auf der Liste. Wir halten dich auf dem Laufenden.</p></div>';
+                        form.innerHTML = `<div class="success-message"><i data-lucide="check-circle" style="color: #10B981; margin-bottom: 12px; width: 48px; height: 48px;"></i><h3>Vielen Dank!</h3><p>Du stehst auf der Liste. Eine Bestätigungsmail wurde an <strong>${userEmail}</strong> gesendet.</p></div>`;
                         lucide.createIcons();
                     } else {
                         submitBtn.textContent = originalText;

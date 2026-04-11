@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprint | BetterStorage</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/fonts/inter.css">
+    <script src="assets/js/lucide.min.js"></script>
     <script>
         const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.dataset.theme = initialTheme;
@@ -50,6 +48,11 @@
                 </div>
             </a>
             <div class="nav-actions">
+                <div class="lang-switch">
+                    <a href="imprint.html" class="active">EN</a>
+                    <span>/</span>
+                    <a href="impressum.html">DE</a>
+                </div>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="sun" class="sun-icon"></i>
                     <i data-lucide="moon" class="moon-icon"></i>
@@ -69,7 +72,7 @@
 
         <h2>Contact</h2>
         <p>
-            Phone: +49 (0) 123 44 55 66<br>
+            Phone: +49 176 46101213<br>
             E-Mail: info@betterstorage.com
         </p>
     </main>
@@ -82,8 +85,8 @@
             </div>
             <div class="footer-links">
                 <a href="imprint.html">Imprint</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">T&Cs</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+
             </div>
         </div>
     </footer>

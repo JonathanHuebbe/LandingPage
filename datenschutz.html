@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung | BetterStorage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/fonts/inter.css">
+    <script src="assets/js/lucide.min.js"></script>
+    <script>
+        const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = initialTheme;
+    </script>
+    <style>
+        .privacy-content { padding: 100px 0; max-width: 800px; margin: 0 auto; }
+        .privacy-content h1 { margin-bottom: 30px; font-size: 2.5rem; }
+        .privacy-content h2, .privacy-content h3 { margin-top: 40px; margin-bottom: 15px; font-size: 1.5rem; }
+        .privacy-content p, .privacy-content li { margin-bottom: 15px; color: var(--text-muted); line-height: 1.6; }
+        .privacy-content ul { margin-bottom: 15px; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index-de.html" style="text-decoration: none;">
+                <div class="logo"><i data-lucide="server"></i><span>BetterStorage</span></div>
+            </a>
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <a href="privacy-policy.html">EN</a>
+                    <span>/</span>
+                    <a href="datenschutz.html" class="active">DE</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle"><i data-lucide="sun" class="sun-icon"></i><i data-lucide="moon" class="moon-icon"></i></button>
+                <a href="index-de.html" class="btn btn-outline">Zurück</a>
+            </div>
+        </div>
+    </nav>
+    <main class="privacy-content container">
+        <h1>Datenschutzerklärung</h1>
+        <p>Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung von BetterStorage.</p>
+
+        <h2>1. Allgemeine Hinweise</h2>
+        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+        
+        <h2>2. Hosting (GitHub Pages)</h2>
+        <p>Wir hosten unsere Website bei GitHub Pages. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (nachfolgend: GitHub). Beim Aufruf der Website können von GitHub technische Zugriffsdaten, einschließlich der IP-Adresse, verarbeitet werden. Die Verwendung von GitHub Pages erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website.</p>
+
+        <h2>3. Kontaktaufnahme / Web3Forms</h2>
+        <p>Wenn Sie sich über das Formular auf unserer Webseite ("Warteliste") eintragen, werden Ihre in das Kontaktformular eingegebenen Daten (Name, E-Mail-Adresse) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+        <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+        <h3>Einsatz von Web3Forms</h3>
+        <p>Für die Abwicklung der Formularanfragen nutzen wir den Dienst Web3Forms (Surkul, LLC, USA). Wenn Sie das Formular absenden, werden die von Ihnen eingegebenen Daten (insbesondere Ihre E-Mail-Adresse und Ihr Name) zwecks Zustellung Ihrer Anfrage an Web3Forms übermittelt.</p>
+        <p>Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Web3Forms: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">https://web3forms.com/privacy</a>.</p>
+
+        <h2>4. Fonts und Icons (Lokal)</h2>
+        <p>Um Ihre Daten zu schützen, haben wir alle auf dieser Website verwendeten Schriftarten (Google Fonts) und Icons (Lucide) lokal innerhalb dieses Website-Projekts eingebunden. Es findet keine automatische Verbindung zu Servern von Google oder unpkg statt, wenn Sie unsere Website besuchen. Dadurch wird Ihre IP-Adresse nicht an diese Drittanbieter übertragen.</p>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="logo"><i data-lucide="server"></i><span>BetterStorage</span></div>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>

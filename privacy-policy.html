@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | BetterStorage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/fonts/inter.css">
+    <script src="assets/js/lucide.min.js"></script>
+    <script>
+        const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = initialTheme;
+    </script>
+    <style>
+        .privacy-content { padding: 100px 0; max-width: 800px; margin: 0 auto; }
+        .privacy-content h1 { margin-bottom: 30px; font-size: 2.5rem; }
+        .privacy-content h2, .privacy-content h3 { margin-top: 40px; margin-bottom: 15px; font-size: 1.5rem; }
+        .privacy-content p, .privacy-content li { margin-bottom: 15px; color: var(--text-muted); line-height: 1.6; }
+        .privacy-content ul { margin-bottom: 15px; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo"><i data-lucide="server"></i><span>BetterStorage</span></div>
+            </a>
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <a href="privacy-policy.html" class="active">EN</a>
+                    <span>/</span>
+                    <a href="datenschutz.html">DE</a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle"><i data-lucide="sun" class="sun-icon"></i><i data-lucide="moon" class="moon-icon"></i></button>
+                <a href="index.html" class="btn btn-outline">Back</a>
+            </div>
+        </div>
+    </nav>
+    <main class="privacy-content container">
+        <h1>Privacy Policy</h1>
+        <p>Data protection is of a particularly high priority for the management of BetterStorage.</p>
+
+        <h2>1. General Information</h2>
+        <p>The following information provides a simple overview of what happens to your personal data when you visit our website. Personal data is any data with which you could be personally identified.</p>
+        
+        <h2>2. Hosting (GitHub Pages)</h2>
+        <p>We host our website on GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (hereinafter: GitHub). When visiting the website, technical server logs may be processed by GitHub, including the IP address. The use of GitHub Pages is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the most reliable presentation of our website.</p>
+
+        <h2>3. Contact / Web3Forms</h2>
+        <p>If you submit an inquiry to us via the contact form ("Waitlist"), your details from the inquiry form, including the contact details you provided there (Name, Email), will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We will not share this information without your consent.</p>
+        <p>The processing of these data is based on Art. 6(1)(b) GDPR, if your request is related to the execution of a contract or if it is necessary to carry out pre-contractual measures. In all other cases, the processing is based on our legitimate interest in the effective processing of requests addressed to us (Art. 6(1)(f) GDPR).</p>
+        <h3>Use of Web3Forms</h3>
+        <p>We use the service Web3Forms (Surkul, LLC, USA) to process the form requests. When you submit the form, the data you entered (especially your email address and name) is transmitted to Web3Forms for the purpose of delivering your inquiry to us.</p>
+        <p>For more information on the handling of user data, please refer to the Web3Forms privacy policy at: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">https://web3forms.com/privacy</a>.</p>
+
+        <h2>4. Fonts and Icons (Local)</h2>
+        <p>To protect your data, we have integrated all fonts (Google Fonts) and icons (Lucide) used on this website locally within this website project. There is no automatic connection to servers of Google or unpkg when you visit our website. This means your IP address is not transferred to these third-party providers.</p>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="logo"><i data-lucide="server"></i><span>BetterStorage</span></div>
+            <div class="footer-links">
+                <a href="imprint.html">Imprint</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
