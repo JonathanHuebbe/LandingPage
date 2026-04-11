@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | BetterStorage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = initialTheme;
+    </script>
+    <style>
+        .impressum-content {
+            padding: 100px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .impressum-content h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .impressum-content h2 {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .impressum-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index-de.html" style="text-decoration: none;">
+                <div class="logo">
+                    <i data-lucide="server"></i>
+                    <span>BetterStorage</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Dark Mode umschalten">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="index-de.html" class="btn btn-outline">Zurück</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="impressum-content container">
+        <h1>Impressum</h1>
+        <p>Angaben gemäß § 5 TMG</p>
+        <p>
+            Max Mustermann<br>
+            Musterstraße 1<br>
+            12345 Musterstadt
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+            Telefon: +49 (0) 123 44 55 66<br>
+            E-Mail: info@betterstorage.com
+        </p>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="logo">
+                <i data-lucide="server"></i>
+                <span>BetterStorage</span>
+            </div>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+            html.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
