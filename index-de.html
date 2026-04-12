@@ -159,6 +159,14 @@
                     <input type="hidden" name="access_key" value="c5b64311-1f68-48b8-be56-dd666caf0e62">
                     <input type="text" name="name" class="form-input" placeholder="Dein Name" required>
                     <input type="email" name="email" class="form-input" placeholder="Deine E-Mail Adresse" required>
+                    <select name="use_case" class="form-input" required>
+                        <option value="" disabled selected>Wofür wirst du es hauptsächlich nutzen?</option>
+                        <option value="Photo Backup">Foto- & Video-Backup</option>
+                        <option value="Document Sorting">Rechnungen & Dokumente sortieren</option>
+                        <option value="Developer Server">Lokale Dev-Umgebung</option>
+                        <option value="Media Server">Media Streaming (Plex/Jellyfin)</option>
+                        <option value="Other">Sonstiges</option>
+                    </select>
                     <button type="submit" class="btn btn-primary btn-large">Eintragen</button>
                 </form>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">Mit dem Eintragen stimmst du unserer <a href="datenschutz.html" style="color: var(--text-color);">Datenschutzerklärung</a> zu.</p>

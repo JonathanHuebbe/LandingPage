@@ -155,6 +155,14 @@
                     <input type="hidden" name="access_key" value="c5b64311-1f68-48b8-be56-dd666caf0e62">
                     <input type="text" name="name" class="form-input" placeholder="Your Name" required>
                     <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
+                    <select name="use_case" class="form-input" required>
+                        <option value="" disabled selected>What will you use it for mostly?</option>
+                        <option value="Photo Backup">Photo & Video Backup</option>
+                        <option value="Document Sorting">Sorting Invoices & Documents</option>
+                        <option value="Developer Server">Local Dev Environment</option>
+                        <option value="Media Server">Media Streaming (Plex/Jellyfin)</option>
+                        <option value="Other">Other</option>
+                    </select>
                     <button type="submit" class="btn btn-primary btn-large">Join Waitlist</button>
                 </form>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">By submitting this form, you agree to our <a href="privacy-policy.html" style="color: var(--text-color);">Privacy Policy</a>.</p>
